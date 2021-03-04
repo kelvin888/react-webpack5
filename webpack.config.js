@@ -32,6 +32,13 @@ module.exports = {
         },
       },
       {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "ts-loader",
+        },
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: "asset",
         parser: {
@@ -43,7 +50,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".js", ".jsx", ".ts", ".tsx"]
   },
   devtool: "source-map",
   devServer: {
